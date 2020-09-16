@@ -33,9 +33,8 @@ export default function List() {
         }
       }
     }
-	`)
-	
-	console.log(process.env.GATSBY_GITHUB_TOKEN)
+  `)
+
   return (
     <ul>
       {data.github.user.pinnedItems.nodes.map(node => (
