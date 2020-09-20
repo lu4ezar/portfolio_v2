@@ -1,2 +1,3 @@
-import wrapWithTheme from "./wrap-with-theme"
-export const wrapRootElement = wrapWithTheme
+import rootWrapper from "./root-wrapper"
+
+export const wrapRootElement = rootWrapper
