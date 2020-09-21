@@ -51,13 +51,8 @@ export default function List() {
               {node.description}
             </Words>
           </p>
-          <Link href={node.url}>repo</Link>
-          <Link href={node.url}>repo</Link>
           <p>
-            <a href={node.url}>repo</a>
-          </p>
-          <p>
-            <a href={node.url}>repo</a>
+            <Link href={node.url}>repo</Link>
           </p>
         </>
       )}
