@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { Project, Words, Link } from "arwes"
 
 export default function List() {
   const data = useStaticQuery(graphql`
@@ -35,14 +36,43 @@ export default function List() {
     }
   `)
 
+  const projects = data.github.user.pinnedItems.nodes.map((node, index) => (
+    <Project
+      key={node.id}
+      animate
+      header={node.name}
+      style={{ margin: 40, width: "30vw", cursor: "pointer" }}
+      onClick={() => console.log("go to project page")}
+    >
+      {anim => (
+        <>
+          <p>
+            <Words animate show={anim.entered}>
+              {node.description}
+            </Words>
+          </p>
+          <Link href={node.url}>repo</Link>
+          <Link href={node.url}>repo</Link>
+          <p>
+            <a href={node.url}>repo</a>
+          </p>
+          <p>
+            <a href={node.url}>repo</a>
+          </p>
+        </>
+      )}
+    </Project>
+  ))
   return (
-    <ul>
-      {data.github.user.pinnedItems.nodes.map(node => (
-        <li key={node.id}>
-          <h1>{node.name}</h1>
-          <p>{node.description}</p>
-        </li>
-      ))}
-    </ul>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly",
+        flexGrow: "1",
+      }}
+    >
+      {projects}
+    </div>
   )
 }
