@@ -1,5 +1,11 @@
 import React from "react"
-import { ThemeProvider, createTheme, SoundsProvider, createSounds } from "arwes"
+import {
+  Arwes,
+  ThemeProvider,
+  createTheme,
+  SoundsProvider,
+  createSounds,
+} from "arwes"
 
 const theme = createTheme()
 const mySounds = {
@@ -24,7 +30,13 @@ const sounds = createSounds(mySounds)
 const wrapRootElement = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
-      <SoundsProvider sounds={sounds}>{element}</SoundsProvider>
+      <Arwes
+        animate
+        pattern="/images/glow.png"
+        background="/images/background.jpg"
+      >
+        <SoundsProvider sounds={sounds}>{element}</SoundsProvider>
+      </Arwes>
     </ThemeProvider>
   )
 }
