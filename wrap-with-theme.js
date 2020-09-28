@@ -3,7 +3,7 @@ import { ThemeProvider, createTheme, Arwes } from "arwes"
 
 const theme = createTheme()
 
-const wrapRootElement = ({ element }) => {
+const wrapRootElementTheme = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
       <Arwes>{element}</Arwes>
@@ -11,4 +11,4 @@ const wrapRootElement = ({ element }) => {
   )
 }
 
-export default wrapRootElement
+export default wrapRootElementTheme
