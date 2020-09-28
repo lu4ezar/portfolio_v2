@@ -1,23 +1,11 @@
-import { Content, Footer, Header, Link, Words } from "arwes"
 import React from "react"
+import Layout from "../components/layout"
 import List from "../components/list"
 
-export default function Home({ data }) {
+export default function Home() {
   return (
-    <Content
-      style={{ height: "100%", display: "flex", flexDirection: "column" }}
-    >
-      <div style={{ margin: 20 }}>
-        <Header>
-          <h1>
-            <Words animate>Projects</Words>
-          </h1>
-        </Header>
-      </div>
+    <Layout>
       <List />
-      <Footer style={{ margin: 20, textAlign: "center" }}>
-        <Link href="https://github.com/lu4ezar/portfolio_v2">GitHub</Link>
-      </Footer>
-    </Content>
+    </Layout>
   )
 }

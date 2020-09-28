@@ -1,9 +1,15 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { navigate, graphql, useStaticQuery } from "gatsby"
 import { Project, Words, Link } from "arwes"
 
 export default function List() {
-  const data = useStaticQuery(graphql`
+  const {
+    github: {
+      user: {
+        pinnedItems: { nodes: projects },
+      },
+    },
+  } = useStaticQuery(graphql`
     query ReposQuery {
       github {
         user(login: "lu4ezar") {
@@ -36,38 +42,26 @@ export default function List() {
     }
   `)
 
-  const projects = data.github.user.pinnedItems.nodes.map((node, index) => (
+  return projects.map(({ id, name, description, url }, index) => (
     <Project
-      key={node.id}
+      key={id}
       animate
-      header={node.name}
-      style={{ margin: 40, width: "30vw", cursor: "pointer" }}
-      onClick={() => console.log("go to project page")}
+      header={name}
+      style={{ margin: 50, width: "30vw", cursor: "pointer" }}
+      onClick={() => navigate(`/projects/${name}`)}
     >
       {anim => (
         <>
           <p>
             <Words animate show={anim.entered}>
-              {node.description}
+              {description}
             </Words>
           </p>
           <p>
-            <Link href={node.url}>repo</Link>
+            <Link href={url}>repo</Link>
           </p>
         </>
       )}
     </Project>
   ))
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-evenly",
-        flexGrow: "1",
-      }}
-    >
-      {projects}
-    </div>
-  )
 }
