@@ -17,8 +17,8 @@
     "arwes": "1.0.0-alpha.5",
     "gatsby": "2.24.85",
     "gatsby-source-graphql": "2.7.6",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "prettier": "2.1.2"
