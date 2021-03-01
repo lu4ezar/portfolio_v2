@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "arwes": "1.0.0-alpha.5",
-    "gatsby": "2.31.1",
-    "gatsby-source-graphql": "2.13.0",
+    "gatsby": "2.32.9",
+    "gatsby-source-graphql": "2.14.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
