@@ -14,7 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "arwes": "1.0.0-alpha.5",
+    "arwes": "1.0.0-alpha.23",
     "gatsby": "3.14.6",
     "gatsby-source-graphql": "3.14.0",
     "react": "17.0.2",
